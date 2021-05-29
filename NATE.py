@@ -25,6 +25,9 @@ lab1.pack()
 ent1 = Entry(win)
 
 ent1.insert(0,"ID or @이하 모두 입력")
+def clear(event):
+    ent1.delete(0,len(ent1.get()))
+ent1.bind("<Button-1>",clear)
 
 ent1.config(show = "")
 
@@ -83,8 +86,6 @@ def login ():
     xpath3="//input[@class='icon_login']"
 
     driver.find_element_by_xpath(xpath3).click()
-
-    lab3.config(text = "[메시지] 로그인 성공!")
 
 btn.config(command=login)
 
