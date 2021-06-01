@@ -1,6 +1,7 @@
 ﻿from tkinter import *
 from tkinter import ttk       
 
+
 win = Tk()
 win.geometry("300x400")
 win.title("자동 로그인")
