@@ -1,4 +1,6 @@
+
 from tkinter import *
+import tkinter.font
 
 from selenium import webdriver
 
@@ -6,17 +8,26 @@ from selenium import webdriver
 
 win = Tk()
 
-win.title("NATE Log-in")
+win.title("NATE LOGIN")
 
-win.geometry("400x300")
+win.geometry("300x400")
 
-win.option_add("*Font","고딕 20")
+win.option_add("*Font","맑음 10")
 
- 
+'''lab3 = Label(win)
+lab3.config(text = "NATE",font="고딕 15", fg = "red", pady = "15")
+lab3.pack()'''
+
+titleFont=tkinter.font.Font(family="맑은 고딕", size=20, weight="bold")
+titleLabel = Label(win, text="NATE", font=titleFont, fg="red", pady="15").pack()
+
+
+
+
 
 lab1 = Label(win)
 
-lab1.config(text = "ID")
+lab1.config(text = "ID", font = "italic 10")
 
 lab1.pack()
 
@@ -25,8 +36,10 @@ lab1.pack()
 ent1 = Entry(win)
 
 ent1.insert(0,"ID or @이하 모두 입력")
+
 def clear(event):
     ent1.delete(0,len(ent1.get()))
+    
 ent1.bind("<Button-1>",clear)
 
 ent1.config(show = "")
@@ -39,7 +52,7 @@ ent1.pack()
 
 lab2 = Label(win)
 
-lab2.config(text = "Password")
+lab2.config(text = "Password", font = "italic 10")
 
 lab2.pack()
 
@@ -57,9 +70,11 @@ ent2.pack()
 
  
 
-btn=Button(win)
+btn=Button(win, fg = "black", bg = "gray")
 
 btn.config(text = '로그인')
+btn.config(font = "굴림 12")
+btn.config(width = 10, height = 1)
 
 def login ():
 
@@ -94,22 +109,6 @@ btn.pack()
  
 
  
-
-lab3 = Label(win)
-
-lab3.pack()
-
- 
-
-win.mainloop()
-
- 
-
- 
-
-lab3 = Label(win)
-
-lab3.pack()
 
  
 
