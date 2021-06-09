@@ -70,7 +70,7 @@ ent2.pack()
 
  
 
-btn=Button(win, fg = "black", bg = "gray")
+btn=Button(win, fg = "black", bg = "light gray")
 
 btn.config(text = '로그인')
 btn.config(font = "굴림 12")
