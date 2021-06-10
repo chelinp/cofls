@@ -1,37 +1,14 @@
-﻿﻿from tkinter import *
-from tkinter import ttk       
-import tkinter as tk
-import requests
-from bs4 import BeautifulSoup as bs
-
+﻿from tkinter import *
+from tkinter import ttk
 
 win = Tk()
 win.geometry("300x400")
-win = tk.Tk()
-win.geometry('300x400')
 win.title("자동 로그인")
-win.option_add("*Font", "맑음 10")                                                                  
 win.option_add("*Font", "맑음 10")
+win.configure(bg= 'white')
+win.resizable(False, False)
 
-def chang() :
-    win = tk.Tk()
-    win.geometry('300x400')
-    win.title("자동 로그인")
-    win.option_add("*Font", "맑음 10")
-
-    menubar = tk.Menu(win)
-
-    filemenu = tk.Menu(menubar)
-    filemenu.add_command(label="아이디 추가하기", command = kakao)
-    filemenu.add_command(label="Save")
-    filemenu.add_command(label="Exit")
-
-def kakao():                                                                                                           
-    menubar.add_cascade(label="File", menu=filemenu)
-
-    win.config(menu=menubar)
-
-def kakao() :                                                                                                           
+def kakao():
     from selenium import webdriver
     import tkinter as tk
 
@@ -39,14 +16,27 @@ def kakao() :
     window.title("DAUM-KAKAO LOGIN")
     window.geometry("400x300")
     window.option_add("*Font","맑음 20")
-    window.option_add("*Font","맑음 10")                                               
 
     lab1 = Label(window)
     lab1.config(text = "id or email", font = "italic 10")
-@@ -35,282 +54,65 @@ def kakao():
+    lab1.pack()
+
+    ent1 = Entry(window)
+    ent1.config(show = "")
+    ent1.pack()
+
+    lab2 = Label(window)
+    lab2.config(text = "Password", font = "italic 10")
+    lab2.pack()
+
+    ent2 = Entry(window)
+    ent2.config(show = "*")
+    ent2.pack()
+
     bkakao = Button(window, fg = "white", bg = "black")
     bkakao.config(text = '로그인')
     bkakao.config(font = '굴림 12')
+
     def kakaologin():
         url ="https://accounts.kakao.com/login?continue=https%3A%2F%2Flogins.daum.net%2Faccounts%2Fksso.do%3Frescue%3Dtrue%26url%3Dhttps%253A%252F%252Fwww.daum.net%252F"
         driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe")
@@ -74,11 +64,10 @@ def kakao() :
     lab3.pack()
 
     window.mainloop()
-    bkakao.config(command = cha)
-
+    
 def naver():                                                                                                           
     from selenium import webdriver
-
+        
     window = Tk()
     window.title("NAVER LOGIN")
     window.geometry("400x300")
@@ -130,11 +119,9 @@ def naver():
     lab3.pack()
 
     window.mainloop()
-
-
 def nate():                                                                                                           
     from selenium import webdriver
-
+        
     window = Tk()
     window.title("NATE LOGIN")
     window.geometry("400x300")
@@ -185,12 +172,9 @@ def nate():
     lab3.pack()
 
     window.mainloop()
-    bkakao.pack()
-
 def facebook():                                                                                                           
-def idid() :
     from selenium import webdriver
-
+        
     window = Tk()
     window.title("FACEBOOK LOGIN")
     window.geometry("400x300")
@@ -231,8 +215,6 @@ def idid() :
 
     bbface.config(command=facelogin)
     bbface.pack()
-    id = ent1.get()
-    pw = ent2.get()
 
     lab3 = Label(window)
     lab3.pack()
@@ -243,47 +225,21 @@ def idid() :
     lab3.pack()
 
     window.mainloop()
-
-    url ="https://www.nate.com/"
-    driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe")
-    driver.get(url)
-    driver.implicitly_wait(5)
-    xpath1="//*[@id='ID']"
-    driver.find_element_by_xpath(xpath1).send_keys(ent1.get())
-    driver.implicitly_wait(5)
-    xpath2="//*[@id='PASSDM']"
-    driver.find_element_by_xpath(xpath2).send_keys(ent2.get())
-    driver.implicitly_wait(5)
-    xpath3="//*[@id='btnLOGIN']"
-    driver.find_element_by_xpath(xpath3).click()
-
-    win.mainloop()
-
 def insta():                                                                                                           
     from selenium import webdriver
-
+        
     window = Tk()
     window.title("INSTAGRAM LOGIN")
     window.geometry("400x300")
     window.option_add("*Font","italic 20")
-def cha() :
-    win = tk.Tk()
-    win.geometry('300x400')
-    win.title("자동 로그인")
-    win.option_add("*Font", "맑음 10")
 
     lab1 = Label(window)
     lab1.config(text = "phone number or name or email", font = "italic 10")
     lab1.pack()
-    menubar = tk.Menu(win)
 
     ent1 = Entry(window)
     ent1.config(show = "")
     ent1.pack()
-    filemenu = tk.Menu(menubar)
-    filemenu.add_command(label="아이디 추가하기", command = kakao)
-    filemenu.add_command(label="Save")
-    filemenu.add_command(label="Exit")
 
     lab2 = Label(window)
     lab2.config(text = "Password", font = "italic 10")
@@ -312,58 +268,51 @@ def cha() :
 
     binsta.config(command=instalogin)
     binsta.pack()
-    menubar.add_cascade(label="File", menu=filemenu)
 
     lab3 = Label(window)
     lab3.pack()
-    win.config(menu=menubar)
 
     window.mainloop()
-    bkao = Button(win, fg = "black", bg = "white", font = "italic")
-    bkao.config(text = "아이디 1")
-    bkao.config(width = 12, height = 1)
-    bkao.config(command = idid)
 
     lab3 = Label(window)
     lab3.pack()
-    bkao.pack()
 
     window.mainloop()
-    win.mainloop()
 
-
-bka = Button(win, fg = "gray", bg = "yellow", font = "italic")
-bka.config(text = "Daum-kakao")
-bka.config(width = 12, height = 1)
+img = PhotoImage(file = "C:\\Users\\USER\\cofls\\daum.png")
+img = img.subsample(4)
+bka = Button(win, image=img, width = 50, height = 50)
 bka.config(command = kakao)
 
-bb = Button(win, fg = "white", bg = "green", font = "italic")
-bb.config(text = "Naver")
-bb.config(width = 12, height = 1)
+labk = Label(win)
+labk.config(text = "DAUM", font = "italic 10", relief='ridge', bg='white',bd=0)
+labk.pack(side = bottom)
+
+img2 = PhotoImage(file = "C:\\Users\\USER\\cofls\\naver.png")
+img2 = img2.subsample(8)
+bb = Button(win, image=img2, width = 50, height = 50)
 bb.config(command = naver)
 
-bnatt = Button(win, fg = "white", bg = "red", font = "italic")
-bnatt.config(text = "Nate")
-bnatt.config(width = 12, height = 1)
+img3 = PhotoImage(file = "C:\\Users\\USER\\cofls\\nate.png")
+img3 = img3.subsample(3)
+bnatt = Button(win, image=img3, width = 50, height = 50)
 bnatt.config(command = nate)
 
-bface = Button(win, fg = "white", bg = "blue", font = "italic")
-bface.config(text = "Facebook")
-bface.config(width = 12, height = 1)
+img4 = PhotoImage(file = "C:\\Users\\USER\\cofls\\facebook.png")
+img4 = img4.subsample(6)
+bface = Button(win, image=img4, width = 50, height = 50)
 bface.config(command = facebook)
 
-bstar = Button(win, fg = "gray", bg = "pink", font = "italic")
-bstar.config(text = "Instagram")
-bstar.config(width = 12, height = 1)
+img5 = PhotoImage(file = "C:\\Users\\USER\\cofls\\instagram.png")
+img5 = img5.subsample(3)
+bstar = Button(win, image=img5, width = 50, height = 50)
 bstar.config(command = insta)
-bka.config(command = chang)
 
-bka.pack()
-bb.pack()
-bnatt.pack()
-bface.pack()
-bstar.pack()
+bka.pack(pady=4)
+bb.pack(pady=4)
+bnatt.pack(pady=4)
+bface.pack(pady=4)
+bstar.pack(pady=4)
 
-win.mainloop()
 
 win.mainloop()
