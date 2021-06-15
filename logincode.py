@@ -8,7 +8,7 @@ win.option_add("*Font", "맑음 10")
 win.iconbitmap('C:\\Users\\USER\\cofls\\icon.ico')
 win.configure(bg= 'white')
 win.resizable(False, False)
-  
+
 def kakao():
     from selenium import webdriver
     import tkinter as tk
